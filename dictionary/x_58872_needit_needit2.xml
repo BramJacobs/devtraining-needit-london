@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt2" max_length="40" name="x_58872_needit_needit2" type="collection">
+        <element label="Contact is aanvrager" max_length="40" name="contact_is_aanvrager" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legl" label="Department" mandatory="true" max_length="40" name="u_choice_2" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legl"/>
+                <element inactive_on_update="false" label="E&amp;M" sequence="3" value="e&amp;m"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="contact_is_aanvrager" dependent_on_field="contact_is_aanvrager" label="Aanvrager" max_length="40" name="u_choice_4" type="string" use_dependent_field="true">
+            <choice/>
+        </element>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_reference_1" reference="sys_user" type="reference"/>
+    </element>
+</database>
